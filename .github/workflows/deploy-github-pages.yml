@@ -27,7 +27,7 @@ jobs:
 
     - name: Build
       working-directory: ./angular-hello-world
-      run: npm run build:prod
+      run: npm run build
 
     - name: Deploy
       if: success()
