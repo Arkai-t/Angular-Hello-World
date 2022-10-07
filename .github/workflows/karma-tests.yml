@@ -9,13 +9,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        cd angular-hello-world
     - uses: actions/checkout@v2 #Checkout Repo
     - uses: actions/setup-node@v1 #Setup Node
       with:
         node-version: '16'
     - name: Run Karma Tests
+      working-directory: ./angular-hello-world
       run: |
         npm install
         npm run test  
