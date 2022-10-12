@@ -26,9 +26,8 @@ jobs:
           git remote add publisher "${remote_repo}"
           git show-ref # useful for debugging
           git branch --verbose
-          pwd
-          ls -a
-          git add ~/Angular-Hello-World/dist/
+          ls -a ./angular-hello-world/
+          git add ./angular-hello-world/dist/
           git commit 
           git push publisher ${BRANCH_NAME}
           
