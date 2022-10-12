@@ -19,5 +19,5 @@ jobs:
         github_access_token: ${{ secrets.ACCESS_TOKEN }} # see the Configuration section for how you can create secrets
         angular_project_dir: ./angular-hello-world
         deploy_branch: gh-pages
-        build_configuration: prod # The build environment for the app. please look configurations in your angular.json
+        build_configuration: production # The build environment for the app. please look configurations in your angular.json
         base_href: /angular-hello-world/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
