@@ -1,6 +1,5 @@
-name: Angular GitHub CI
+name: Deploy on gh-pages
 
-# Controls when the workflow will run
 on:
   push:
     branches:
@@ -22,3 +21,4 @@ jobs:
         build_configuration: production # The build environment for the app. please look configurations in your angular.json
         base_href: /angular-hello-world/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
         angular_dist_build_folder: dist/angular-hello-world
+    - run: ls -a /dist
