@@ -17,7 +17,7 @@ jobs:
           node-version: '16.x'
       
     - name: Build
-      run: ng build
+      run: npm build
       
     - name: Commit and Push new README.md to the repository
       uses: mikeal/publish-to-github-action@master
