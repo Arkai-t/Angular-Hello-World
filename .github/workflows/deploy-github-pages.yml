@@ -17,7 +17,6 @@ jobs:
           node-version: '16.x'
       
     - name: Build
-      working-directory: angular-hello-world
       run: ng build
       
     - name: Commit and Push new README.md to the repository
