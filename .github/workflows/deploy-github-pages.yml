@@ -17,6 +17,7 @@ jobs:
           npm run build
           
       - name: Commit and Push 
+        working-directory: ./angular-hello-world
         run: |
           git fetch
           remote_repo="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
@@ -26,8 +27,7 @@ jobs:
           git remote add publisher "${remote_repo}"
           git show-ref # useful for debugging
           git branch --verbose
-          git checkout ${BRANCH_NAME}
-          git add -f ./angular-hello-world/dist/
+          git add -f ./dist/
           git commit 
           git push publisher ${BRANCH_NAME}
           
