@@ -26,8 +26,11 @@ jobs:
           git remote add publisher "${remote_repo}"
           git show-ref # useful for debugging
           git branch --verbose
-          git checkout gh-pages
+          git checkout ${BRANCH_NAME}
           git add /dist/
           git add /dist/*
           git commit 
-          git push publisher gh-pages
+          git push publisher ${BRANCH_NAME}
+          
+        env:
+         BRANCH_NAME: 'gh-pages'
