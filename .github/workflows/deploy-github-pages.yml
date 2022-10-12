@@ -17,10 +17,11 @@ jobs:
           node-version: '16.x'
       
     - name: Install dependencies
+      working-directory: angular-hello-world
       run: npm install
       
     - name: Build
-      working-directory: ./angular-hello-world
+      working-directory: angular-hello-world
       run: npm build
       
     - name: Commit and Push new README.md to the repository
