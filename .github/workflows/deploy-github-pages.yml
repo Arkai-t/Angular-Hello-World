@@ -26,9 +26,9 @@ jobs:
           git remote add publisher "${remote_repo}"
           git show-ref # useful for debugging
           git branch --verbose
-          git checkout ${BRANCH_NAME}
           git add /dist/
           git add /dist/*
+          git checkout ${BRANCH_NAME}
           git commit 
           git push publisher ${BRANCH_NAME}
           
