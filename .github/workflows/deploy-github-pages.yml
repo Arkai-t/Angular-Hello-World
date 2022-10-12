@@ -19,8 +19,6 @@ jobs:
       - name: Commit and Push 
         working-directory: ./angular-hello-world
         run: |
-          cp -r ./dist/ ~/dist/
-          cd ~/dist/
           git fetch
           remote_repo="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git config http.sslVerify false
@@ -29,9 +27,9 @@ jobs:
           git remote add publisher "${remote_repo}"
           git show-ref # useful for debugging
           git branch --verbose
-          git add .
-          git commit 
-          git push publisher ${BRANCH_NAME}
+          git add dist -f
+          git commit -m "A" 
+          git subtree push --prefix dist origin ${BRANCH_NAME}
           
         env:
          BRANCH_NAME: 'gh-pages'
