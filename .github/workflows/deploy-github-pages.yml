@@ -15,13 +15,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
           node-version: '16.x'
+      
     - name: Install dependencies
-      working-directory: ./angular-hello-world
       run: npm install
       
     - name: Build
       working-directory: ./angular-hello-world
-      run: ng build
+      run: npm build
       
     - name: Commit and Push new README.md to the repository
       uses: mikeal/publish-to-github-action@master
