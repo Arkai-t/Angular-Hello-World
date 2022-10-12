@@ -19,6 +19,8 @@ jobs:
       - name: Commit and Push 
         working-directory: ./angular-hello-world
         run: |
+          cp -r /dist/ ~/dist/
+          cd ~/dist/
           git fetch
           remote_repo="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git config http.sslVerify false
