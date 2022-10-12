@@ -19,7 +19,7 @@ jobs:
       - name: Commit and Push 
         working-directory: ./angular-hello-world
         run: |
-          cp -r /dist/ ~/dist/
+          cp -r ./dist/ ~/dist/
           cd ~/dist/
           git fetch
           remote_repo="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
@@ -29,7 +29,7 @@ jobs:
           git remote add publisher "${remote_repo}"
           git show-ref # useful for debugging
           git branch --verbose
-          git add -f ./dist/
+          git add .
           git commit 
           git push publisher ${BRANCH_NAME}
           
